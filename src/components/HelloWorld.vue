@@ -3,6 +3,8 @@
   <div class="hello">
     <div v-for="asset in assets" :key="asset" class="asset">
       <img :src="asset.image_url" :alt="asset.asset_contract.name">
+      <p>{{ getUsernameForAsset(asset) }}</p>
+      <p>{{ getPriceForAsset(asset)}}</p>
     </div>
   </div>
 </template>
@@ -49,6 +51,23 @@ export default class HelloWorld extends Vue {
     await this.fetchCollection('boredapeyachtclub');
     await this.fetchAssets(this.primaryAssetContracts[0].address);
     console.log(this.assets);
+  }
+
+  getUsernameForAsset(asset:any):string {
+    if (!asset.owner.user || !asset.owner.user.username) {
+      return 'No owner given';
+    }
+    return asset.owner.user.username;
+  }
+
+  getPriceForAsset(asset:any): string {
+    if (!asset.last_sale || !asset.last_sale.payment_token.usd_price) {
+      return 'No price given';
+    }
+    const totalPriceInWEI = parseInt(asset.last_sale.total_price, 10);
+    const totalPriceInETH = (totalPriceInWEI / 10 ** 18);
+    const totalPriceInDollar = totalPriceInETH * asset.last_sale.payment_token.usd_price;
+    return `${totalPriceInDollar.toFixed(0).toString()}$`;
   }
 }
 </script>
