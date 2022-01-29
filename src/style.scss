@@ -1,0 +1,88 @@
+h2, h1, p, a {
+  color: white;
+  font-family: Peace;
+  margin: 0px;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 5.2vw;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 5vw;
+  margin-bottom: 0px;
+}
+
+.small-font{
+  font-size: 1vw;
+  font-weight: 100;
+  margin: 0px;
+}
+
+.border {
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  filter: drop-shadow(0px 5px 0px #a31121);
+}
+
+.button {
+  @extend .border;
+  font-family: omnes-pro;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+    &-icon {
+      @extend .button;
+      background-color: #6b4d7d;
+      margin-left: 10px;
+      color:#fcc1ca;
+      border-color: #b54468;
+    }
+
+    &-text {
+      @extend .button;
+      background-color: #ee3f58;
+      border-color: #ee3f58;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    &-bar {
+      border-radius: 10px;
+      border-color: #fcfaff;
+      background-color: #fcfaff;
+      color: #302240;
+      filter: drop-shadow(0px 5px 0px #bd9de0);
+      margin-bottom: 10px;
+      margin-top: 10px;
+      padding-left: 2px;
+      padding-right: 2px;
+      margin-left: 10px;
+      position: absolute;
+    }
+}
+
+.label {
+  border-style: solid;
+  border-radius: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: omnes-pro;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border: none;
+}
+
+.button-icon > span {
+  vertical-align: bottom;
+}

@@ -1,33 +1,39 @@
 <template>
-<h1>LEADERBOARD BLA BLA ASSETS NFT COLLECTION BLA</h1>
-  <div class="hello">
+  <div class="collection-wrapper">
     <div v-for="asset in assets" :key="asset" class="asset">
-      <img :src="asset.image_url" :alt="asset.asset_contract.name">
-      <p>{{ getUsernameForAsset(asset) }}</p>
-      <p>{{ getPriceForAsset(asset)}}</p>
+      <collection-item
+        :userName="getUsernameForAsset(asset)"
+        :itemName="asset.asset_contract.name"
+        numberOfTrees="30"
+        :assetPrice="getPriceForAsset(asset)"
+        :imgUrl="asset.image_url"
+        :traits="this.traits">
+      </collection-item>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+
+import { Vue, Options } from 'vue-class-component';
 import axios from 'axios';
+import CollectionItem from './CollectionItem.vue';
 
 axios.defaults.baseURL = 'https://api.opensea.io/api/v1/';
 
 @Options({
-  props: {
-    msg: String,
+  components: {
+    CollectionItem,
   },
 })
-export default class HelloWorld extends Vue {
-  msg!: string
-
+export default class NFTCollection extends Vue {
   private collection: any = null
 
   private primaryAssetContracts: any = null
 
   private assets: any = null
+
+  private traits: Array<any> = [{ color: '#9D575B' }, { color: '#00F000' }, { color: '#00800B' }, { color: '#352C29' }]
 
   async fetchCollection(name: string): Promise<void> {
     await axios
@@ -62,7 +68,7 @@ export default class HelloWorld extends Vue {
 
   getPriceForAsset(asset:any): string {
     if (!asset.last_sale || !asset.last_sale.payment_token.usd_price) {
-      return 'No price given';
+      return '...';
     }
     const totalPriceInWEI = parseInt(asset.last_sale.total_price, 10);
     const totalPriceInETH = (totalPriceInWEI / 10 ** 18);
@@ -75,6 +81,13 @@ export default class HelloWorld extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
+.collection-wrapper {
+  background-color: #312541;
+  overflow: hidden; // give height for div with floating children
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .asset {
   width: 20%;
   float: left;
@@ -84,6 +97,10 @@ export default class HelloWorld extends Vue {
 img {
   max-width:100%;
   max-height:100%;
+}
+
+p {
+  color: black;
 }
 
 </style>
