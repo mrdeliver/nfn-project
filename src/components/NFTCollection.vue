@@ -20,6 +20,7 @@ import axios from 'axios';
 import CollectionItem from './CollectionItem.vue';
 
 axios.defaults.baseURL = 'https://api.opensea.io/api/v1/';
+axios.defaults.headers.common['X-API-KEY'] = process.env.VUE_APP_KEY;
 
 @Options({
   components: {
@@ -54,9 +55,9 @@ export default class NFTCollection extends Vue {
   }
 
   async mounted(): Promise<void> {
+    console.log(process.env.VUE_APP_KEY);
     await this.fetchCollection('boredapeyachtclub');
     await this.fetchAssets(this.primaryAssetContracts[0].address);
-    console.log(this.assets);
   }
 
   getUsernameForAsset(asset:any):string {
@@ -86,12 +87,14 @@ export default class NFTCollection extends Vue {
   overflow: hidden; // give height for div with floating children
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 5%;
 }
 
 .asset {
-  width: 20%;
-  float: left;
-  padding: 2%;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 2%;
 }
 
 img {
