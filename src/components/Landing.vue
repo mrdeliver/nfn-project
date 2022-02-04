@@ -1,7 +1,4 @@
 <template>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
-  <link rel="stylesheet" href="https://use.typekit.net/mdj8kqm.css">
   <div class="landing-wrapper">
     <div class="logo-bar">
       <img src="../assets/logo_transparent.png"/>
@@ -30,7 +27,7 @@ export default class Landing extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 
 @import '../style.scss';
 
