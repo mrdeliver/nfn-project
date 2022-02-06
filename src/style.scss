@@ -4,12 +4,22 @@ h2, h1, p, a {
   margin: 0px;
 }
 
-h1 {
+.main-heading {
   font-weight: 400;
   font-size: 5.2vw;
   margin-bottom: 5vh;
   margin-top: 5vh;
 }
+
+.button-text {
+  font-family: omnes-pro;
+}
+
+.sub-heading {
+  font-weight: 400;
+  font-size: 2vw;
+}
+
 
 h2 {
   font-weight: 400;
@@ -85,4 +95,13 @@ h2 {
 
 .button-icon > span {
   vertical-align: bottom;
+}
+
+.icon {
+  margin: 0;
+  padding: 0;
+}
+
+.thin-font {
+  font-family: omnes-pro;
 }

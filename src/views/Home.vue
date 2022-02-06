@@ -21,3 +21,9 @@ import Worlds from '@/components/Worlds.vue';
 })
 export default class Home extends Vue {}
 </script>
+
+<style lang="scss">
+
+@import '../style.scss';
+
+</style>

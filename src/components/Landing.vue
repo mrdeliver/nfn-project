@@ -7,9 +7,9 @@
       <a class="button-bar" style="right:10px"><span class="material-icons">language</span></a>
     </div>
     <div class="content">
-      <h2><span class="small-font">over</span> 2.000.000</h2>
+      <h2 class="main-heading"><span class="small-font">over</span> 2.000.000</h2>
       <p class="small-font">Trees planted / kg plastic collected / animals protected</p>
-      <h1> Join the game!</h1>
+      <h1 class="main-heading"> Join the game!</h1>
       <div>
         <a class="button-text"><span>Leaderboard</span></a>
         <a class="button-icon"><span class="material-icons">help_outline</span></a>

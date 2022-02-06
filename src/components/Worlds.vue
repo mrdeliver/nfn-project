@@ -1,23 +1,25 @@
 <template>
   <div class="worlds-wrapper">
     <div class="heading">
-      <h1>... and discover worlds</h1>
+      <h1 class="main-heading">... and discover worlds</h1>
     </div>
     <div class="worlds-container">
-      <div class="world">
-        <div class="locked-icon world-item">locked</div>
-        <div class="world-heading world-item">FOREST</div>
-        <div class="world-subheading world-item">Discover collection</div>
+      <div class="world unlocked">
+        <div class="locked-icon world-item">
+          <span class="material-icons icon-hidden">lock</span>
+        </div>
+        <div class="world-heading world-item sub-heading">Forrest</div>
+        <div class="world-subheading world-item thin-font">Discover collection</div>
       </div>
-      <div class="world">
-        <div class="locked-icon world-item">locked</div>
-        <div class="world-heading world-item">FOREST</div>
-        <div class="world-subheading world-item">Discover collection</div>
+      <div class="world locked">
+        <div class="locked-icon world-item"><span class="material-icons icon">lock</span></div>
+        <div class="world-heading world-item sub-heading">Ocean</div>
+        <div class="world-subheading world-item thin-font">comming soon</div>
       </div>
-      <div class="world">
-        <div class="locked-icon world-item">locked</div>
-        <div class="world-heading world-item">FOREST</div>
-        <div class="world-subheading world-item">Discover collection</div>
+      <div class="world locked">
+        <div class="locked-icon world-item"><span class="material-icons icon">lock</span></div>
+        <div class="world-heading world-item sub-heading">Wildlife</div>
+        <div class="world-subheading world-item thin-font">comming soon</div>
       </div>
     </div>
   </div>
@@ -54,7 +56,6 @@ export default class Worlds extends Vue {
 }
 
 .worlds-container {
-  border: solid red 1px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -66,7 +67,6 @@ export default class Worlds extends Vue {
   width: 467px;
   margin-left: 3%;
   margin-right: 3%;
-  background-image: url("https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,11 +79,28 @@ export default class Worlds extends Vue {
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
   border-radius: 25px;
+  filter: drop-shadow(0px 10px 0px #D4F5D8);
+}
+
+.unlocked {
+  filter: drop-shadow(0px 10px 0px #D4F5D8);
+  color: #205828;
+  background-image: url("https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
+}
+
+.locked {
+  filter: drop-shadow(0px 10px 0px #E3E3E3);
+  color: #3A4A52;
+  background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url("https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
 }
 
 .world-item {
   width: 100%;
   color: white;
   margin-bottom: 5px;
+}
+
+.icon-hidden {
+  visibility: hidden;
 }
 </style>
