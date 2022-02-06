@@ -9,7 +9,10 @@
           <span class="material-icons icon-hidden">lock</span>
         </div>
         <div class="world-heading world-item sub-heading">Forrest</div>
-        <div class="world-subheading world-item thin-font">Discover collection</div>
+        <div class="world-subheading world-item thin-font">
+          <span class="text">Discover collection</span>
+          <span class="material-icons icon discover-icon md-18">east</span>
+        </div>
       </div>
       <div class="world locked">
         <div class="locked-icon world-item"><span class="material-icons icon">lock</span></div>
@@ -103,4 +106,19 @@ export default class Worlds extends Vue {
 .icon-hidden {
   visibility: hidden;
 }
+
+.discover-icon {
+  background-color: #205828;
+  color:#CDF0D9;
+  filter: drop-shadow(0px 3px 0px #D4F5D8);
+  border-radius: 6px;
+  margin-left: 5px;
+  display:inline-block;
+  padding: 3px;
+}
+
+.text {
+  display:inline-block;
+}
+
 </style>

@@ -153,4 +153,5 @@ img {
 .full-width {
   width: 100%;
 }
+
 </style>
