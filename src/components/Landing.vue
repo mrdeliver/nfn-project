@@ -10,18 +10,61 @@
       <h2 class="main-heading"><span class="small-font">over</span> 2.000.000</h2>
       <p class="small-font">Trees planted / kg plastic collected / animals protected</p>
       <h1 class="main-heading"> Join the game!</h1>
-      <div>
-        <a class="button-text"><span>Leaderboard</span></a>
-        <a class="button-icon"><span class="material-icons">help_outline</span></a>
-        <a class="button-icon"><span class="material-icons">language</span></a>
+      <div class="action-bar">
+        <Button size="normal" color="red-primary">
+          <template #icon><IconBase
+          iconColor="currentColor" iconName="box" iconWidth="20" iconHeight="50">
+            <IconEther/></IconBase></template>
+          <template #text>Leaderboard</template>
+        </Button>
+        <Button size="small" color="red-primary">
+          <template #icon><IconBase
+          iconColor="currentColor" iconName="box" iconWidth="15" iconHeight="20">
+            <IconEther/></IconBase></template>
+          <template #text>Leaderboard</template>
+        </Button>
+        <Button size="tiny" color="red-primary">
+          <template #icon><IconBase
+          iconColor="currentColor" iconWidth="10" iconHeight="10">
+            <IconEther/></IconBase></template>
+          <template #text>Leaderboard</template>
+        </Button>
+        <Button size="normal" color="light-purple-primary" iconOnly>
+          <template #icon><IconBase
+          iconColor="currentColor" iconWidth="20" iconHeight="40">
+            <IconEther/></IconBase></template>
+        </Button>
+        <Button size="normal" color="red-primary" textOnly>
+          <template #text>Leaderboard</template>
+        </Button>
+        <Button size="tiny" color="dark-purple-primary" textOnly>
+          <template #text>Leaderboard</template>
+        </Button>
+        <Button size="normal" color="red-primary" iconOnly>
+          <template #icon><IconBase
+          iconColor="currentColor" iconWidth="50" iconHeight="50">
+            <icon-globe-meridian/></IconBase></template>
+        </Button>
       </div>
     </div>
   </div>
-  </template>
+</template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import Button from './primitives/Button.vue';
+import IconBase from './primitives/icons/IconBase.vue';
+import IconEther from './primitives/icons/IconEther.vue';
+import IconGlobeMeridian from './primitives/icons/IconGlobeMeridian.vue';
 
+@Options({
+  components: {
+    Button,
+    IconBase,
+    IconEther,
+    IconGlobeMeridian,
+  },
+})
 export default class Landing extends Vue {
 
 }
@@ -55,6 +98,11 @@ export default class Landing extends Vue {
   width: 100%;
   align-content: center;
   align-items: center;
+}
+
+.action-bar {
+  display: flex;
+  justify-content: center;
 }
 
 .logo-bar > img {

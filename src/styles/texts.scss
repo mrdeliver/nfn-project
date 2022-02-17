@@ -1,0 +1,211 @@
+@import 'colors';
+
+$font-family-peace: Peace;
+$font-family-omnes: omnes-pro;
+
+@mixin peace-heading-1{
+  font-family: $font-family-peace;
+  font-size: 6vw;
+}
+
+@mixin peace-heading-2 {
+  font-family: $font-family-peace;
+  font-size: 3vw;
+}
+
+@mixin peace-text {
+  font-family: $font-family-peace;
+  font-size: 1.6vw;
+}
+
+@mixin omnes-heading {
+  font-family: $font-family-omnes;
+  font-size: 1.6vw;
+  font-weight: 600;
+}
+
+@mixin omnes-text-button-normal {
+  font-family: $font-family-omnes;
+  font-size: 2.5vw;
+  font-weight: 600;
+}
+
+@mixin omnes-text-large {
+  font-family: $font-family-omnes;
+  font-size: 1.6vw;
+  font-weight: 600;
+}
+
+@mixin omnes-text-normal-medium {
+  font-family: $font-family-omnes;
+  font-size: 1vw;
+  font-weight: 600;
+}
+
+@mixin omnes-text-normal-bold {
+  font-family: $font-family-omnes;
+  font-size: 1vw;
+  font-weight: 700;
+}
+
+@mixin omnes-text-tiny-medium {
+  font-family: $font-family-omnes;
+  font-size: 0.8vw;
+  font-weight: 600;
+}
+
+@mixin omnes-text-tiny-bold {
+  font-family: $font-family-omnes;
+  font-size: 0.8vw;
+  font-weight: 700;
+}
+
+@mixin omnes-text-detail-medium {
+  font-family: $font-family-omnes;
+  font-size: 0.6vw;
+  font-weight: 600;
+}
+
+@mixin omnes-text-detail-bold {
+  font-family: $font-family-omnes;
+  font-size: 0.6vw;
+  font-weight: 700;
+}
+
+@mixin dark-text {
+  color: $color-purple-9;
+}
+
+@mixin light-text {
+  color: $color-white;
+}
+
+@mixin dark-green-text {
+  color: $color-green-8;
+}
+
+// light omnes(round) text
+
+.light-omnes-heading {
+  @include omnes-heading();
+  @include light-text;
+}
+
+.light-omnes-text-normal-medium {
+  @include omnes-text-normal-medium;
+  @include light-text;
+}
+
+.light-omnes-text-normal-bold{
+  @include omnes-text-normal-bold;
+  @include light-text;
+}
+
+.light-omnes-text-tiny-medium {
+  @include omnes-text-tiny-medium;
+  @include light-text;
+}
+
+.light-omnes-text-tiny-bold {
+  @include omnes-text-tiny-bold;
+  @include light-text;
+}
+
+.light-omnes-text-detail-medium {
+  @include omnes-text-detail-medium;
+  @include light-text;
+}
+
+.light-omnes-text-detail-bold {
+  @include omnes-text-detail-bold;
+  @include light-text;
+}
+
+.light-omnes-text-large {
+  @include omnes-text-large;
+  @include light-text;
+}
+
+// dark omnes (round) text
+
+.dark-omnes-heading {
+  @include omnes-heading();
+  @include dark-text;
+}
+
+.dark-omnes-text-normal-medium {
+  @include omnes-text-normal-medium;
+  @include dark-text;
+}
+
+.dark-omnes-text-normal-bold{
+  @include omnes-text-normal-bold;
+  @include dark-text;
+}
+
+.dark-omnes-text-tiny-medium {
+  @include omnes-text-tiny-medium;
+  @include dark-text;
+}
+
+.dark-omnes-text-tiny-bold {
+  @include omnes-text-tiny-bold;
+  @include dark-text;
+}
+
+.dark-omnes-text-detail-medium {
+  @include omnes-text-detail-medium;
+  @include dark-text;
+}
+
+.dark-omnes-text-detail-bold {
+  @include omnes-text-detail-bold;
+  @include dark-text;
+}
+
+.dark-omnes-text-large {
+  @include omnes-text-large;
+  @include dark-text;
+}
+
+// dark green omnes (round) text
+
+.dark-green-omnes-heading {
+  @include omnes-heading();
+  @include dark-green-text;
+}
+
+.dark-green-omnes-text-normal-medium {
+  @include omnes-text-normal-medium;
+  @include dark-green-text;
+}
+
+.dark-green-omnes-text-normal-bold{
+  @include omnes-text-normal-bold;
+  @include dark-green-text;
+}
+
+.dark-green-omnes-text-tiny-medium {
+  @include omnes-text-tiny-medium;
+  @include dark-green-text;
+}
+
+.dark-green-omnes-text-tiny-bold {
+  @include omnes-text-tiny-bold;
+  @include dark-green-text;
+}
+
+.dark-green-omnes-text-detail-medium {
+  @include omnes-text-detail-medium;
+  @include dark-green-text;
+}
+
+.dark-green-omnes-text-detail-bold {
+  @include omnes-text-detail-bold;
+  @include dark-green-text;
+}
+
+.dark-green-omnes-text-large {
+  @include omnes-text-large;
+  @include dark-green-text;
+}
