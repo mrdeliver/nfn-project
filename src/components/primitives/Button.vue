@@ -83,12 +83,17 @@ export default class Button extends Vue {
 }
 
 @mixin button-press($size, $padding, $click-depth, $drop-shadow-depth) {
+  $anim_dur: 0.1s;
+  $anim_type: ease-in-out;
   height: $size;
   min-width: $size;
+
   padding: 0px $padding 0px $padding;
   margin: 4px 10px 4px 10px;
   -webkit-box-shadow: 0px $drop-shadow-depth 0px 0px;
   box-shadow: 0px $drop-shadow-depth 0px 0px;
+  transition: margin $anim_dur $anim_type, box-shadow $anim_dur $anim_type;
+  -webkit-transition: margin $anim_dur $anim_type, box-shadow $anim_dur $anim_type;
 
   &:active {
     margin: calc(4px + #{$click-depth}) 10px calc(4px - #{$click-depth}) 10px;

@@ -47,8 +47,6 @@
 import { Options, Vue } from 'vue-class-component';
 import Button from './primitives/Button.vue';
 import IconBase from './primitives/icons/IconBase.vue';
-import IconEther from './primitives/icons/IconEther.vue';
-import IconGlobeMeridian from './primitives/icons/IconGlobeMeridian.vue';
 
 @Options({
   components: {
