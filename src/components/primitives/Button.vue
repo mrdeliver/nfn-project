@@ -84,7 +84,7 @@ export default class Button extends Vue {
 
 @mixin button-press($size, $padding, $click-depth, $drop-shadow-depth) {
   $anim_dur: 0.1s;
-  $anim_type: ease-in-out;
+  $anim_type: ease-out;
   height: $size;
   min-width: $size;
 
@@ -109,7 +109,7 @@ export default class Button extends Vue {
 .normal {
   $size: 64px;
   $padding: 15px;
-  $click-depth: 4px;
+  $click-depth: 6px;
   $drop-shadow-depth: 10px;
   @include omnes-text-button-normal;
   border-radius: $btn-border-radius-big;
