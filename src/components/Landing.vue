@@ -12,27 +12,20 @@
       <h1 class="main-heading"> Join the game!</h1>
       <div class="action-bar">
         <Button size="normal" color="red-primary">
-          <template #icon><IconBase
-          iconColor="currentColor" iconName="box" iconWidth="20" iconHeight="50">
-            <IconEther/></IconBase></template>
+          <template #icon><IconBase iconType="IconEther" size="30" color="white">
+            </IconBase></template>
           <template #text>Leaderboard</template>
         </Button>
         <Button size="small" color="red-primary">
-          <template #icon><IconBase
-          iconColor="currentColor" iconName="box" iconWidth="15" iconHeight="20">
-            <IconEther/></IconBase></template>
+          <template #icon></template>
           <template #text>Leaderboard</template>
         </Button>
         <Button size="tiny" color="red-primary">
-          <template #icon><IconBase
-          iconColor="currentColor" iconWidth="10" iconHeight="10">
-            <IconEther/></IconBase></template>
+          <template #icon></template>
           <template #text>Leaderboard</template>
         </Button>
         <Button size="normal" color="light-purple-primary" iconOnly>
-          <template #icon><IconBase
-          iconColor="currentColor" iconWidth="20" iconHeight="40">
-            <IconEther/></IconBase></template>
+          <template #icon></template>
         </Button>
         <Button size="normal" color="red-primary" textOnly>
           <template #text>Leaderboard</template>
@@ -41,9 +34,9 @@
           <template #text>Leaderboard</template>
         </Button>
         <Button size="normal" color="red-primary" iconOnly>
-          <template #icon><IconBase
-          iconColor="currentColor" iconWidth="50" iconHeight="50">
-            <icon-globe-meridian/></IconBase></template>
+          <template #icon>
+            <IconBase iconType="IconGlobeMeridian" size="40" color="white"></IconBase>
+          </template>
         </Button>
       </div>
     </div>
@@ -61,8 +54,6 @@ import IconGlobeMeridian from './primitives/icons/IconGlobeMeridian.vue';
   components: {
     Button,
     IconBase,
-    IconEther,
-    IconGlobeMeridian,
   },
 })
 export default class Landing extends Vue {

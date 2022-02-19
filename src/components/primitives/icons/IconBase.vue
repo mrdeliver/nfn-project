@@ -1,42 +1,34 @@
 <template>
   <div class="center-icon">
-    <svg xmlns="http://www.w3.org/2000/svg"
-      :width="iconWidth"
-      :height="iconHeight"
-      viewBox="0 0 50 50"
-      :aria-labelledby="iconName"
-      role="presentation"
-    >
-      <title
-        :id="iconName"
-        lang="en"
-      >{{ iconName }} icon</title>
-      <g :fill="iconColor" style="display: flex; justify-content: center; align-items: center;">
-        <slot />
-      </g>
-    </svg>
+    <component
+    :is="iconType"
+    v-bind="{'iconSize': size, 'iconColor': color}">
+    </component>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Options } from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
+import IconEther from './IconEther.vue';
+import IconGlobeMeridian from './IconGlobeMeridian.vue';
 
 @Options({
   name: 'IconBase',
+  components: {
+    IconEther,
+    IconGlobeMeridian,
+  },
 })
 export default class IconBase extends Vue {
   @Prop({ type: String })
-  iconName = 'box';
+  iconType = 'IconEther';
 
-  @Prop()
-  iconWidth = 18;
-
-  @Prop()
-  iconHeight = 18;
+  @Prop({ type: Number })
+  size = 18;
 
   @Prop({ type: String })
-  iconColor = 'currentColor';
+  color = 'currentColor';
 }
 </script>
 
