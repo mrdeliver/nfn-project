@@ -11,14 +11,6 @@
       <p class="small-font">Trees planted / kg plastic collected / animals protected</p>
       <h1 class="main-heading"> Join the game!</h1>
       <div class="action-bar">
-        <HoverInformation>
-            <template #hoverarea>
-              <div>hallo</div>
-            </template>
-            <template #information>
-              information
-            </template>
-        </HoverInformation>
         <Button size="normal" color="red-primary">
           <template #icon><IconBase iconType="IconEther" size="30" color="white">
             </IconBase></template>
@@ -32,29 +24,13 @@
           <template #icon></template>
           <template #text>Leaderboard</template>
         </Button>
-        <HoverInformation :tooltipDirection="'bottom'">
-          <template #hoverarea>
-            <div>hallo</div>
-          </template>
-          <template #information>
-            information
-          </template>
-        </HoverInformation>
-        <HoverInformation :tooltipDirection="'top'">
-          <template #hoverarea>
-            <div>hallo</div>
-          </template>
-          <template #information>
-            information
-          </template>
-        </HoverInformation>
-        <Button size="normal" color="light-purple-primary" iconOnly>
+        <Button size="normal" color="neutral-primary" iconOnly>
           <template #icon></template>
         </Button>
         <Button size="normal" color="red-primary" textOnly>
           <template #text>Leaderboard</template>
         </Button>
-        <Button size="tiny" color="dark-purple-primary" textOnly>
+        <Button size="tiny" color="neutral-dark-primary" textOnly>
           <template #text>Leaderboard</template>
         </Button>
         <Button size="normal" color="red-primary" iconOnly>
@@ -62,7 +38,37 @@
             <IconBase iconType="IconGlobeMeridian" size="40" color="white"></IconBase>
           </template>
         </Button>
-        <HoverInformation>
+      </div>
+      <div class="action-bar">
+        <HoverInformation style="z-index: 1">
+            <template #hoverarea>
+              <div >hallo</div>
+            </template>
+            <template #information>
+              <div> Some information</div>
+            </template>
+        </HoverInformation>
+        <HoverInformation
+          :tooltipDirection="'bottom'"
+          :color="'neutral-dark'">
+          <template #hoverarea>
+            <div>hallo</div>
+          </template>
+          <template #information>
+            information
+          </template>
+        </HoverInformation>
+        <HoverInformation
+          :tooltipDirection="'top'"
+          :color="'red'">
+          <template #hoverarea>
+            <div>hallo</div>
+          </template>
+          <template #information>
+            information
+          </template>
+        </HoverInformation>
+        <HoverInformation :color="'green'">
             <template #hoverarea>
               <div>hallo</div>
             </template>

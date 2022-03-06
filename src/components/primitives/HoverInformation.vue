@@ -1,11 +1,11 @@
 <template>
-  <div >
+  <div>
     <div class="hoverarea"
       @mouseover="hover = true"
       @mouseleave="hover = false"
       ref="hoverArea">
       <slot name="hoverarea"></slot>
-      <div class="information" :class="tooltipDirectionClass" v-show="hover">
+      <div class="information" :class="[tooltipDirectionClass, color]" v-show="hover">
         <slot name="information"></slot>
         <span class="triangle"></span>
       </div>
@@ -18,13 +18,16 @@ import { Vue, Options } from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 
 @Options({
-  name: 'Button',
+  name: 'HoverInformation',
 })
-export default class Button extends Vue {
+export default class HoverInformation extends Vue {
     hover = false;
 
     @Prop({ default: '' })
     private tooltipDirection = '';
+
+    @Prop({ default: 'neutral' })
+    color = 'neutral';
 
     // props cannot be passed directly as class bindings
     tooltipDirectionClass = '';
@@ -58,20 +61,26 @@ export default class Button extends Vue {
 @import '../../styles/colors';
 @import '../../styles/general-styles';
 
-.hoverarea {
-  position: relative;
-}
-
 $tooltip-padding: 15px;
 $tooltip-min-height: 16px;
 $triangle-size: 16px;
+$hover-area-padding: 6px;
+
+.hoverarea {
+  position: relative;
+  padding: $hover-area-padding;
+
+  &:hover {
+    cursor: default;
+  }
+}
 
 .information {
-  background-color: $color_green_3;
   display: flex;
   position: absolute;
   justify-content: center;
   align-items: center;
+  z-index: 2;
   padding: $tooltip-padding;
   min-height: $tooltip-min-height;
   border-radius: $border-radius-small;
@@ -88,7 +97,7 @@ $triangle-size: 16px;
 }
 
 .left {
-  right: calc(100% + #{$triangle-size} + 4px);
+  right: calc(100% + #{$triangle-size} - #{$hover-area-padding} - 3px);
   top: 50%;
   transform: translateY(-50%);
   .triangle {
@@ -98,35 +107,55 @@ $triangle-size: 16px;
 }
 
 .right {
-  left: calc(100% + #{$triangle-size} + 4px);
+  left: calc(100% + #{$triangle-size} - #{$hover-area-padding} - 3px);
   top: 50%;
   transform: translateY(-50%);
   .triangle {
-    left: -8px;
+    left: -$triangle-size/2;
     transform: rotate(45deg);
   }
 }
 
 .bottom {
-  top: calc(50% + #{$triangle-size} + 4px);
+  top: calc(50% + #{$triangle-size} + #{$hover-area-padding} - 3px);
   left: 50%;
   transform: translateX(-50%);
   .triangle {
-    left: calc(50% - 8px);
-    bottom: calc(50% + 16px);
+    left: calc(50% - #{$triangle-size}/2);
+    bottom: calc(50% + #{$triangle-size});
     transform: rotate(135deg);
   }
 }
 
 .top {
-  bottom: calc(50% + #{$triangle-size} + 4px);
+  bottom: calc(50% + #{$triangle-size} + #{$hover-area-padding} - 3px);
   left: 50%;
   transform: translateX(-50%);
   .triangle {
-    left: calc(50% - 8px);
-    top: calc(50% + 16px);
+    left: calc(50% - #{$triangle-size}/2);
+    top: calc(50% + #{$triangle-size});
     transform: rotate(-45deg);
   }
+}
+
+.neutral {
+  background-color: $color_purple_2;
+  color: $color_purple_9;
+}
+
+.neutral-dark {
+  background-color: $color_purple_9;
+  color: $color_purple_2;
+}
+
+.red {
+  background-color: $color_red_1;
+  color: $color_red_8;
+}
+
+.green {
+  background-color: $color_green_2;
+  color: $color_green_8;
 }
 
 </style>

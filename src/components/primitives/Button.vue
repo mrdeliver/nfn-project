@@ -150,7 +150,7 @@ export default class Button extends Vue {
   color: $color_red_7; // oddly, this sets the drop shadow color, when not specified otherwise
 }
 
-.light-purple-primary {
+.neutral-primary {
   .text {
     @include dark-text;
   }
@@ -164,7 +164,7 @@ export default class Button extends Vue {
   color: $color_purple_5;
 }
 
-.dark-purple-primary {
+.neutral-dark-primary {
   .text {
     @include light-text;
   }
