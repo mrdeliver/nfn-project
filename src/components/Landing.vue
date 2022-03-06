@@ -11,6 +11,14 @@
       <p class="small-font">Trees planted / kg plastic collected / animals protected</p>
       <h1 class="main-heading"> Join the game!</h1>
       <div class="action-bar">
+        <HoverInformation>
+            <template #hoverarea>
+              <div>hallo</div>
+            </template>
+            <template #information>
+              information
+            </template>
+        </HoverInformation>
         <Button size="normal" color="red-primary">
           <template #icon><IconBase iconType="IconEther" size="30" color="white">
             </IconBase></template>
@@ -24,6 +32,22 @@
           <template #icon></template>
           <template #text>Leaderboard</template>
         </Button>
+        <HoverInformation :tooltipDirection="'bottom'">
+          <template #hoverarea>
+            <div>hallo</div>
+          </template>
+          <template #information>
+            information
+          </template>
+        </HoverInformation>
+        <HoverInformation :tooltipDirection="'top'">
+          <template #hoverarea>
+            <div>hallo</div>
+          </template>
+          <template #information>
+            information
+          </template>
+        </HoverInformation>
         <Button size="normal" color="light-purple-primary" iconOnly>
           <template #icon></template>
         </Button>
@@ -38,6 +62,14 @@
             <IconBase iconType="IconGlobeMeridian" size="40" color="white"></IconBase>
           </template>
         </Button>
+        <HoverInformation>
+            <template #hoverarea>
+              <div>hallo</div>
+            </template>
+            <template #information>
+              information
+            </template>
+        </HoverInformation>
       </div>
     </div>
   </div>
@@ -47,11 +79,13 @@
 import { Options, Vue } from 'vue-class-component';
 import Button from './primitives/Button.vue';
 import IconBase from './primitives/icons/IconBase.vue';
+import HoverInformation from './primitives/HoverInformation.vue';
 
 @Options({
   components: {
     Button,
     IconBase,
+    HoverInformation,
   },
 })
 export default class Landing extends Vue {
