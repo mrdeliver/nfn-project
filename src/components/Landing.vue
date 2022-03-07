@@ -10,6 +10,7 @@
       <h2 class="main-heading"><span class="small-font">over</span> 2.000.000</h2>
       <p class="small-font">Trees planted / kg plastic collected / animals protected</p>
       <h1 class="main-heading"> Join the game!</h1>
+      <div class="light-omnes-heading"> Omnes Heading</div>
       <div class="action-bar">
         <Button size="normal" color="red-primary">
           <template #icon><IconBase iconType="IconEther" size="30" color="white">
@@ -25,7 +26,9 @@
           <template #text>Leaderboard</template>
         </Button>
         <Button size="normal" color="neutral-primary" iconOnly>
-          <template #icon></template>
+          <template #icon>
+            <IconBase iconType="IconEther" size="40"></IconBase>
+          </template>
         </Button>
         <Button size="normal" color="red-primary" textOnly>
           <template #text>Leaderboard</template>
@@ -39,10 +42,14 @@
           </template>
         </Button>
       </div>
-      <div class="action-bar">
+      <div class="action-bar" style="margin-top: 50px;">
         <HoverInformation style="z-index: 1">
             <template #hoverarea>
-              <div >hallo</div>
+              <Tag :tagColor="'neutral'" :tagSize="'small'">
+                <div>
+                  Tag Content
+                </div>
+              </Tag>
             </template>
             <template #information>
               <div> Some information</div>
@@ -52,7 +59,11 @@
           :tooltipDirection="'bottom'"
           :color="'neutral-dark'">
           <template #hoverarea>
-            <div>hallo</div>
+            <Tag :tagColor="'neutral-dark'" :tagSize="'normal'">
+              <div>
+                Dark Tag Content
+              </div>
+            </Tag>
           </template>
           <template #information>
             information
@@ -62,7 +73,11 @@
           :tooltipDirection="'top'"
           :color="'red'">
           <template #hoverarea>
-            <div>hallo</div>
+           <Tag :tagColor="'red'" :tagSize="'normal'">
+              <div>
+                Red Tag Content
+              </div>
+            </Tag>
           </template>
           <template #information>
             information
@@ -70,7 +85,11 @@
         </HoverInformation>
         <HoverInformation :color="'green'">
             <template #hoverarea>
-              <div>hallo</div>
+              <Tag :tagColor="'green'" :tagSize="'tiny'">
+                <div>
+                  Green Tag Content
+                </div>
+              </Tag>
             </template>
             <template #information>
               information
@@ -86,12 +105,14 @@ import { Options, Vue } from 'vue-class-component';
 import Button from './primitives/Button.vue';
 import IconBase from './primitives/icons/IconBase.vue';
 import HoverInformation from './primitives/HoverInformation.vue';
+import Tag from './primitives/Tag.vue';
 
 @Options({
   components: {
     Button,
     IconBase,
     HoverInformation,
+    Tag,
   },
 })
 export default class Landing extends Vue {
@@ -102,6 +123,15 @@ export default class Landing extends Vue {
 <style scoped lang="scss">
 
 @import '../style.scss';
+@import '../styles/texts.scss';
+
+.main-heading {
+  @include peace-heading-1;
+}
+
+.small-font {
+  @include peace-heading-2;
+}
 
 .landing-wrapper {
   height: 100vh;

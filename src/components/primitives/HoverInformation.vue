@@ -117,7 +117,7 @@ $hover-area-padding: 6px;
 }
 
 .bottom {
-  top: calc(50% + #{$triangle-size} + #{$hover-area-padding} - 3px);
+  top: calc(100% + 4px);
   left: 50%;
   transform: translateX(-50%);
   .triangle {
@@ -128,7 +128,7 @@ $hover-area-padding: 6px;
 }
 
 .top {
-  bottom: calc(50% + #{$triangle-size} + #{$hover-area-padding} - 3px);
+  bottom: calc(100% + 4px);
   left: 50%;
   transform: translateX(-50%);
   .triangle {
