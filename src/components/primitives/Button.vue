@@ -56,6 +56,9 @@ export default class Button extends Vue {
 
   .text {
     flex-grow: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &:hover {

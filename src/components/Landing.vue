@@ -21,6 +21,13 @@
           <template #icon></template>
           <template #text>Leaderboard</template>
         </Button>
+        <Button size="small" color="red-primary" textOnly>
+          <template #text>
+            <div>Buy for </div>
+            <IconBase iconType="IconEther" size="20" color="white"></IconBase>
+            <div>0.11 on Openseas</div>
+          </template>
+        </Button>
         <Button size="tiny" color="red-primary">
           <template #icon></template>
           <template #text>Leaderboard</template>
