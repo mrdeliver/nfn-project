@@ -49,6 +49,13 @@
           </template>
         </Button>
       </div>
+      <div>
+      <Button size="normal" color="red-primary" iconOnly>
+          <template #icon><IconBase iconType="IconEther" size="30" color="white">
+            </IconBase>
+          </template>
+      </Button>
+    </div>
       <div class="action-bar" style="margin-top: 50px;">
         <HoverInformation style="z-index: 1">
             <template #hoverarea>

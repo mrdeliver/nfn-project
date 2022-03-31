@@ -1,10 +1,12 @@
 <template>
-  <div :class="classList">
-    <div class="icon">
-      <slot name="icon"></slot>
-    </div>
-    <div class="text">
-      <slot name="text"></slot>
+  <div class="button-wrapper">
+    <div :class="classList">
+      <div class="icon">
+        <slot name="icon"></slot>
+      </div>
+      <div class="text">
+        <slot name="text"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -46,11 +48,14 @@ export default class Button extends Vue {
 @import '../../styles/colors';
 @import '../../styles/general-styles';
 
+.button-wrapper {
+  display: inline-block;
+}
+
 .nfn-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: inline;
   -webkit-user-select:none;
   user-select: none;
 
