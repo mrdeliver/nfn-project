@@ -181,4 +181,17 @@ export default class Button extends Vue {
   color: $color_purple_5;
 }
 
+.green-dark-primary {
+  .text {
+    color: $color_green_2;
+  }
+
+  .icon {
+    color: $color_green_2;
+  }
+
+  background-color: $color_green_7;
+  border-color: $color_green_7 !important;
+  color: $color_green_2; // oddly, this sets the drop shadow color, when not specified otherwise
+}
 </style>

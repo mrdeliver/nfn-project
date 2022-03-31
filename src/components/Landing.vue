@@ -37,7 +37,7 @@
             <IconBase iconType="IconEther" size="40"></IconBase>
           </template>
         </Button>
-        <Button size="normal" color="red-primary" textOnly>
+        <Button size="normal" color="green-dark-primary" textOnly>
           <template #text>Leaderboard</template>
         </Button>
         <Button size="tiny" color="neutral-dark-primary" textOnly>
